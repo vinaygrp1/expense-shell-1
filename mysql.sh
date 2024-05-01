@@ -24,7 +24,7 @@ mysql -h database.vinaydevops.online -uroot -p${mysql_root_password} -e 'show da
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOGFILE
-    #VALIDATE $? "MySQL Root Password setup"
+    VALIDATE $? "MySQL Root Password setup"
 else #if [$? eq 0]
     echo -e "Mysql Root Password is already setup...$Y SKKIPING $N"
 fi
