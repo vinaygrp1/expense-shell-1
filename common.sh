@@ -1,4 +1,8 @@
 #!/bin/bash
+set -e
+handle_error(){
+    echo "Error ocuured at line number:$1, "error command:$2"
+}
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
