@@ -3,7 +3,7 @@
 set -e
 
 handle_error(){
-    echo "Error ocuured at line number: $1, error command: $2"
+    echo "Error occured at line number: $1, error command: $2"
 }
 
 trap 'handle_error ${LINENO} "$BASH_COMMAND"' ERR
@@ -33,7 +33,7 @@ check_root(){
         echo "please run this script with root access."
         exit 1 # manually exit if error comes.
     else
-        echo "you are super user"
+        echo "you are super user."
     fi
 }
 
