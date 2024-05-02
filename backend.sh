@@ -2,7 +2,7 @@
 
 source ./common.sh
 
-check_root 
+check_root
 
 echo "Please enter DB password:"
 read  mysql_root_password
@@ -14,8 +14,8 @@ dnf install nodejs -y &>>$LOGFILE
 id expense &>>$LOGFILE
 if [ $? -ne 0 ]
 then 
-    useradd expense &>>$LOGFILE    
-else #if [ $? eq 0]
+    useradd expense &>>$LOGFILE
+else
     echo -e "Expense user already created...$Y SKIPPING $N"
 fi
 
@@ -45,8 +45,5 @@ dnf install mysql -y &>>$LOGFILE
 mysql -h database.vinaydevops.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 
 systemctl restart backend &>>$LOGFILE
-
-
-
 
 
