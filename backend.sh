@@ -38,9 +38,7 @@ systemctl start backend &>>$LOGFILE
 
 systemctl enable backend &>>$LOGFILE
 
-
 dnf install mysql -y &>>$LOGFILE
-
 
 mysql -h database.vinaydevops.online -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 
